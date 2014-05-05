@@ -1,6 +1,6 @@
 {
   "name": "gulp-peg",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Gulp plugin for compiling PEG grammars",
   "main": "index.js",
   "scripts": {
@@ -30,13 +30,11 @@
     "gulp-coffeelint": "^0.3.2",
     "mocha": "^1.18.2",
     "chai": "^1.9.1",
-    "stream-buffers": "^0.2.5",
     "vinyl": "^0.2.3"
   },
   "dependencies": {
     "through2": "^0.4.1",
     "pegjs": "^0.8.0",
-    "lodash": "^2.4.1",
-    "q": "^1.0.1"
+    "lodash": "^2.4.1"
   }
 }
