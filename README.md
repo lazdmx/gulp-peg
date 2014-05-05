@@ -37,5 +37,5 @@ Plugin redirects passed options directly to PEG, so read [its documentation](htt
 
 #### exportVar option
 
-This option is inspired by [grunt-peg] plugin, and defines variable to which the generated parser will be assigned in the output file. Default value is `module.exports`.
+This option is inspired by [grunt-peg](https://github.com/dvberkel/grunt-peg) plugin, and defines variable to which the generated parser will be assigned in the output file. Default value is `module.exports`.
 
