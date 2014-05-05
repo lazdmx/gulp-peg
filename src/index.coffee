@@ -28,14 +28,13 @@ module.exports = ( opts = { } ) ->
       @emit "error", gutil.PluginError "gulp-peg", "Streams are not supported!"
 
     else if file.isBuffer( )
-      process.nextTick =>
-        try
-          @push processFile file, opts
-          do cb
+      try
+        @push processFile file, opts
+        do cb
 
-        catch e
-          @emit "error", e
-          do cb
+      catch e
+        @emit "error", e
+        do cb
 
     else if file.isNull( )
       @push file
