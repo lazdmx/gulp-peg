@@ -34,7 +34,6 @@
   },
   "dependencies": {
     "through2": "^0.4.1",
-    "pegjs": "^0.8.0",
-    "lodash": "^2.4.1"
+    "pegjs": "^0.8.0"
   }
 }

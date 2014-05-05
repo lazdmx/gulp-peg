@@ -1,4 +1,3 @@
-_       = require "lodash"
 PEG     = require "pegjs"
 util    = require "util"
 gutil   = require "gulp-util"
@@ -19,7 +18,8 @@ processFile = ( file, opts ) ->
 module.exports = ( opts = { } ) ->
 
   # Set default options to PEG compilator
-  _.defaults opts, exportVar: "module.exports", output: "source"
+  opts.exportVar ?= "module.exports"
+  opts.output    ?= "source"
 
   # Construct stream
   through.obj ( file, enc, cb ) ->
