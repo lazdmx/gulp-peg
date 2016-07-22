@@ -25,7 +25,8 @@ paths =
 gulp.task "peg:compile", ->
   gulp
     .src( paths.scripts.peg )
-    .pipe( peg( ).on( "error", gutil.log ) )
+    .pipe( peg( {exportVar: ''} ) )
+    .on( "error", gutil.log ) 
     .pipe( gulp.dest( paths.build ) )
 ```
 
@@ -39,3 +40,8 @@ Plugin redirects passed options directly to PEG, so read [its documentation](htt
 
 This option is inspired by [grunt-peg](https://github.com/dvberkel/grunt-peg) plugin, and defines variable to which the generated parser will be assigned in the output file. Default value is `module.exports`.
 
+`exportVar`          | Behavior
+----------           | ---------
+`null`               | **default** Will set variable to `module.exports`
+function(filename){} | should return the desired variable name
+`''` (empty string)  | convenience value to set variable to '*filename*parser'

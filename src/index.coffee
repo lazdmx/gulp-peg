@@ -7,7 +7,16 @@ through = require "through2"
 processFile = ( file, opts ) ->
   grammar = file.contents.toString "utf8"
   parser  = PEG.buildParser grammar, opts
-  source  = util.format "%s = %s;", opts.exportVar, parser
+
+  if typeof opts.exportVar is 'function'
+    variable = opts.exportVar file.relative
+  else
+    if opts.exportVar isnt ''
+      variable = opts.exportVar
+    else
+      variable = file.relative.split('.')[0] + 'parser'
+
+  source  = util.format "%s = %s;", variable, parser
 
   file.path = gutil.replaceExtension file.path, ".js"
   file.contents = new Buffer source
