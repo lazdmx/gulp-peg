@@ -44,4 +44,4 @@ This option is inspired by [grunt-peg](https://github.com/dvberkel/grunt-peg) pl
 ----------           | ---------
 `null`               | **default** Will set variable to `module.exports`
 function(filename){} | should return the desired variable name
-`''` (empty string)  | convenience value to set variable to *filename*parser
+`''` (empty string)  | convenience value to set variable to '*filename*parser'
